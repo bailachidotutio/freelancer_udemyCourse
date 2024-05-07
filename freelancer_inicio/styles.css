@@ -1,0 +1,301 @@
+:root {
+  --blanco: #ffffff;
+  --oscuro: #212122;
+  --primario: #ffc107;
+  --secundario: #0097a7;
+  --gris: #757575;
+  --verde: #79AC78;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box; /*spinnet*/
+  scroll-snap-type: y mandatory;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 16px; /* 1rem = 10px */
+  font-family: "Krub", sans-serif;
+  font-weight: 700;
+  /* DIRECCION, COLOR PRINCIPAL % DE DEGRADADO, COLOR SECUNDARIO % DE DEGRADADO*/
+  background-image: linear-gradient(to top, #dfe9f3 0%, var(--blanco) 100%);
+}
+
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+.titulo span {
+  font-size: 2rem;
+}
+
+
+
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.boton {
+  background-color: var(--secundario);
+  color: var(--blanco);
+  padding: 1rem 3rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  width: 90%;
+  text-align: center;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .boton {
+    width: auto;
+  }
+}
+
+.boton:hover{
+    cursor: pointer;
+}
+
+.w-100{
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .w-100{
+        width: auto;
+    }   
+}
+
+.flex{
+    display: flex;
+}
+
+.alinear-derecha{
+    justify-content: flex-end;
+}
+
+.sombra {
+  -webkit-box-shadow: -1px 4px 14px 1px rgba(117, 117, 117, 0.76);
+  -moz-box-shadow: -1px 4px 14px 1px rgba(117, 117, 117, 0.76);
+  box-shadow: -1px 4px 14px 1px rgba(117, 117, 117, 0.76);
+  background-color: var(--blanco);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.nav-bg {
+  background-color: var(--secundario);
+}
+
+.navegacion-principal {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 480px) {
+  /*celular*/
+}
+
+@media (min-width: 768px) {
+  /*tablet*/
+  .navegacion-principal {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1140px) {
+  /*Laptop*/
+}
+
+@media (min-width: 1400px) {
+  /*PC*/
+}
+
+.navegacion-principal a {
+  display: block;
+  text-align: center;
+  color: var(--blanco);
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1rem;
+}
+
+.navegacion-principal a:hover {
+  background-color: var(--primario);
+  color: var(--oscuro);
+}
+
+.hero {
+  background-image: url(/image/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 450px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.contenido-hero {
+  position: absolute;
+  background-color: rgb(0, 0, 0, 0.7); /**antenior**/
+  background-color: rgb(0 0 0 / 70%);
+  width: 100%;
+  height: 100%;
+
+  /*alinear horizontal como vertical*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+  color: var(--blanco);
+}
+
+.ubicacion {
+  display: flex;
+  align-items: flex-end;
+}
+
+.servicios, .navegacion-principal, .formulario{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+/*SERVICIOS*/
+
+@media (min-width: 768px) {
+    .servicios{
+        display: grid;
+    
+        /* fr = fraccion*/
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 1rem;
+        
+        /* GRID SIMPLIFICADO
+        grid: 200px 800px / 300px 300px;*/
+    }
+}
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.servicio h3{
+    color: var(--secundario);
+    font-weight: normal;
+}
+
+.servicio p{
+    line-height: 2;
+    text-align: center;
+}
+
+.servicio .iconos{
+    height: 15rem;
+    width: 15rem;
+    background-color: var(--secundario);
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+/* CONTACTO */
+
+.formulario{
+    background-color: var(--gris);
+    /*utiliza el valor mas pequeño*/
+    width: min(80rem,100%);
+    margin: 0 auto; /* SIEMPRE QUE SE TENGA ELEMENTOS CUYO PADRE NO SEA DISPLAY FLEX (CENTRAR)*/
+    padding: 2rem;
+    border-radius: 1rem;
+
+}
+
+.formulario fieldset{
+    border: none;
+
+}
+
+.formulario legend{
+    text-align: center;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin: 2rem;
+    color: var(--primario);
+}
+
+@media (min-width: 768px) {
+    .contenedor-campos{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto 23rem;
+        column-gap: 1rem; 
+    }
+    
+    .campo:nth-child(3),
+    .campo:nth-child(4){
+        /* 1 / 3... 1=dodne empieza, 3=donde termina*/
+        grid-column: 1 / 3;
+    }
+
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-top: .5rem;
+    display: block; /* TOMA ESPACIO DISPONIBLE*/
+}
+
+.campo textarea{
+    height: 20rem;
+}
+
+.input-text{
+    width: 100%;
+    border: none;
+    padding: 1.5rem;
+    border-radius: .5rem;
+}
+
+
+.footer{
+    text-align: center;
+}
